@@ -6,4 +6,4 @@ COPY certs/ca.pem /certs/ca.pem
 COPY config/ca-bundle.crt /etc/ssl/certs/ca-certificates.crt
 COPY config/ca-config.json /config/ca-config.json
 EXPOSE 8888
-ENTRYPOINT ["/bin/cfssl", "serve", "-ca-key=/certs/ca-key.pem", "-ca=/certs/ca.pem", "-config=/config/ca-config.json"]
+ENTRYPOINT ["/bin/cfssl", "serve", "-address=0.0.0.0", "-ca-key=/certs/ca-key.pem", "-ca=/certs/ca.pem", "-config=/config/ca-config.json"]
