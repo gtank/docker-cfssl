@@ -13,7 +13,7 @@ certs:
 	cfssl gencert -initca config/ca-csr.json | cfssljson -bare certs/ca
 
 run:
-	docker run -d docker-cfssl
+	docker run -d -p 8888:8888 docker-cfssl
 
 clean:
 	rm -rf bin certs
