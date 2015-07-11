@@ -1,0 +1,10 @@
+{
+  "signing": {
+    "default": {
+      "remote": "docker-ca"
+    }
+  },
+  "remotes": {
+    "docker-ca": "localhost:8888"
+  }
+}

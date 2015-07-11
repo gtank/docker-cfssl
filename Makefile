@@ -1,4 +1,4 @@
-.PHONY: clean run cfssl
+.PHONY: clean run cfssl req
 
 all: certs cfssl docker
 
@@ -14,6 +14,9 @@ certs:
 
 run:
 	docker run -d -p 8888:8888 docker-cfssl
+
+req:
+	cfssl gencert -config config/request-config.json config/request-csr.json | cfssljson -bare certs/req
 
 clean:
 	rm -rf bin certs
